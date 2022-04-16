@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import CartContext from "../Cart/CartContext";
 import classes from "./MainNavigation.module.css";
@@ -6,10 +7,18 @@ import AuthContext from "../../AuthContext";
 
 const Navbar = (props) => {
   const authCtx = useContext(AuthContext);
+  const cartCtx = useContext(CartContext)
+  const email=localStorage.getItem('Email');
+  
   const isLoggedIn = authCtx.isLoggedIn;
-  const logoutHandler =()=>{
+  const logoutHandler=async()=>{
     authCtx.logout();
-  }
+    const cart=JSON.stringify(cartCtx.items)
+    
+     await axios.post(`https://crudcrud.com/api/ff71684f3ab4436c8fc935fc56a3ff82/cart${email}`,
+     cart)
+    
+    }
   let total = 0;
   const cartCntxt = useContext(CartContext);
   cartCntxt.items.forEach((element) => {
@@ -32,17 +41,17 @@ const Navbar = (props) => {
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/Store">store</Link>
+              <Link to="/Store">Store</Link>
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/about">about</Link>
+              <Link to="/about">About</Link>
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/contact-us">contact us</Link>
+              <Link to="/contact-us">Contact us</Link>
             </li>
           )}
           {isLoggedIn && (
@@ -52,7 +61,7 @@ const Navbar = (props) => {
           )}
           {isLoggedIn && (
             <li>
-              <button onClick={props.Cart}>cart ({total})</button>
+              <button onClick={props.Cart}>Cart ({total})</button>
             </li>
           )}
 
