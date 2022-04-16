@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+
+.product__header{
+  font-family: "Metal Mania";
+  text-align: center;
+  padding: 20px;
+  font-size: 40px;
+}
+.Product__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.Product__container div{
+  margin: 15px;
+}
+
+.product__title{
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  font-size: 24px;
+  color: #333;
+ 
+}
+
+.image__container{
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image__container img{
+  display: block;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.image__container :hover{
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+.product__price{
+  display: flex;
+  margin: 8px;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+
+.Product__button {
+  float: right;
+  color: white;
+  display: flex;
+  border-radius: 4px;
+  background: #56ccf2;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  border: none;
+}
+.Product__button:hover {
+  transition: all 0.2s ease-in-out;
+  background: rgb(56, 131, 150);
+  color: white;
+  border: none;
+}
+

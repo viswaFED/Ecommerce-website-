@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+.footer {
+  display: flex;
+  margin-top: 40px;
+  padding: 20px;
+  justify-content: center;
+  background: #56CCF2;
+
+}
+.footer-title {
+  text-align: center;
+  color: white;
+  width: 50%;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 auto;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.footericons{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+a.social:hover {
+  transform: translateY(-2px);
+}
+a.youtube {
+  color: #eb3223;
+}
+
+a.facebook {
+  color: #4968ad;
+}
+
