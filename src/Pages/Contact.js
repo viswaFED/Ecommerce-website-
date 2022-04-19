@@ -1,5 +1,5 @@
 import React, { Fragment, useRef } from "react";
-import "./Contact.css";
+import classes from "./Contact.module.css";
 const Contact = () => {
   const nameRef = useRef("");
   const mailRef = useRef("");
@@ -34,32 +34,32 @@ const Contact = () => {
       <h1 style={{ fontFamily: "Times New Roman", textAlign: "center" }}>
         Contact us
       </h1>
-      <form className="container" onSubmit={submitHandler}>
-        <div className="form">
-          <div className="formdetails">
+      <form  onSubmit={submitHandler}>
+        <div className={classes.contact}>
+        <div className={classes.control}>
             <label>Name</label>
             <input type="text" ref={nameRef} />
           </div>
           <br />
-          <div className="formdetails">
+          <div className={classes.control}>
             <label>Email</label>
             <input
               type="email"
               ref={mailRef}
             />
           </div>
-          <div className="formdetails">
+          <div className={classes.control}>
             <label>Phone no</label>
             <input type="number" ref={phnoRef} />
           </div>
-          <div className="">
+          <div className={classes.control}>
             <label className="msglabel">Message</label>
             <textarea
-              className="msginput" ref={msgRef}
+               ref={msgRef}
             ></textarea>
           </div>
-          <div>
-            <button className="Contactbutton"> submit</button>
+          <div >
+            <button className={classes.toggle} > submit</button>
           </div>
         </div>
       </form>

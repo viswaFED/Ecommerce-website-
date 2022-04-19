@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { NavLink   } from "react-router-dom";
 import CartContext from "../Cart/CartContext";
 import classes from "./MainNavigation.module.css";
 import AuthContext from "../../AuthContext";
@@ -31,32 +31,32 @@ const Navbar = (props) => {
         <ul>
           {!isLoggedIn && (
             <li>
-              <Link to="/auth">Login</Link>
+              <NavLink   to="/auth">Login</NavLink  >
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/Home">Home</Link>
+              <NavLink   to="/Home">Home</NavLink  >
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/Store">Store</Link>
+              <NavLink  to="/Store">Store</NavLink >
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/about">About</Link>
+              <NavLink  to="/about">About</NavLink >
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/contact-us">Contact us</Link>
+              <NavLink  to="/contact-us">Contact us</NavLink >
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/profile">Profile</Link>
+              <NavLink  to="/profile">Profile</NavLink >
             </li>
           )}
           {isLoggedIn && (
